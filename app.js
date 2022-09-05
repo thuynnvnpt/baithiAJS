@@ -30,7 +30,8 @@ app.controller("myCtrl", function($scope){
 	};
 
 	$scope.deleteproduct = function(){
-		$scope.products.splice($scope.products.indexOf($scope.clickedproduct));
+		let i = $scope.products.indexOf($scope.clickedproduct);
+		$scope.products=$scope.products.filter((item,index)=> index!=i)
 		$scope.message = "product Deleted successfully";
 	};
 
